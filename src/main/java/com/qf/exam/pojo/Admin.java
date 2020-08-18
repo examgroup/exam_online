@@ -4,7 +4,7 @@ package com.qf.exam.pojo;
 import lombok.Data;
 
 @Data
-public class admin {
+public class Admin {
     private int adminId;//ID
     private String adminName;//姓名
     private String sex;//年龄

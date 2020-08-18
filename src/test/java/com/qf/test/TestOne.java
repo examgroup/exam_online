@@ -1,6 +1,6 @@
 package com.qf.test;
 
-import com.qf.exam.pojo.admin;
+import com.qf.exam.pojo.Admin;
 import org.junit.Test;
 
 public class TestOne {
@@ -9,7 +9,7 @@ public class TestOne {
     public void test1(){
 
         System.out.println("hello world");
-        System.out.println(new admin());
+        System.out.println(new Admin());
 
     }
 
