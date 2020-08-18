@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.exam.dao.MultiDao">
+
+    <select id="getAll" resultType="Multi">
+        select * from Multi_question
+    </select>
+
+    <select id="getMultiByID" resultType="Multi">
+        select * from Multi_question where questionId= #{questionId}
+    </select>
+
+
+    <insert id="save">
+        insert into Multi_question value(null,#{subject},#{question},#{answerA},#{analysis},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{analysis},#{score},#{section},#{level},null,null,null)
+    </insert>
+
+    <delete id="delete">
+        delete from Multi_question where questionId= #{questionId}
+    </delete>
+
+    <update id="update">
+        update Multi_question set subject=#{subject},question=#{question},answerA=#{answerA},answerB=#{answerB},answerC=#{answerC},answerD=#{answerD},rightAnswer=#{rightAnswer}, analysis=#{analysis},score=#{score},section=#{section},level=#{level} where questionId=#{questionId}
+    </update>
+</mapper>
