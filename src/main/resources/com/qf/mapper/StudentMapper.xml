@@ -37,7 +37,7 @@
                      sex,
                      role
                     ) values(
-                     #{studentId},
+                     null,
                      #{studentName},
                      #{grade},
                      #{major},
