@@ -17,4 +17,29 @@ public class AdminServiceImpl implements IAdminService {
     public List<Admin> getAll() {
         return ad.getAll();
     }
+
+    @Override
+    public Admin getAdminById(int adminId) {
+        return ad.getAdminById(adminId);
+    }
+
+    @Override
+    public int saveAdmin(Admin admin) {
+        return ad.saveAdmin(admin);
+    }
+
+    @Override
+    public int deleteAdmin(int adminId) {
+        return ad.deleteAdmin(adminId);
+    }
+
+    @Override
+    public int updateAdminById(Admin admin) {
+        return ad.updateAdminById(admin);
+    }
+
+    @Override
+    public Admin login(String adminName, String pwd) {
+        return ad.login(adminName, pwd);
+    }
 }
