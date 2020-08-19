@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8083
 mybatis:
   mapper-locations: classpath:com/qf/mapper/*.xml
   type-aliases-package: com.qf.exam.pojo
@@ -7,7 +7,7 @@ mybatis:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/exam?useSSL=true&serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://10.12.154.151:3306/exam?useSSL=true&serverTimezone=UTC&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root

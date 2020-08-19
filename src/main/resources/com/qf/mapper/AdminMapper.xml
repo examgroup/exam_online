@@ -7,4 +7,24 @@
     <select id="getAll" resultType="admin">
     select * from admin
 </select>
+
+    <select id="getAdminById" resultType="admin">
+        select * from admin where adminId = #{adminId}
+        </select>
+
+    <select id="login" resultType="admin">
+        select * from admin where adminName = #{adminName} and pwd = #{pwd}
+    </select>
+
+    <insert id="saveAdmin">
+        insert into admin values (null,#{adminName},#{sex},#{tel},#{email},#{pwd},#{cardID},#{role},null,null,null )
+    </insert>
+
+    <update id="updateAdminById">
+        update admin set adminName = #{adminName},sex = #{sex},tel = #{tel},email = #{email},pwd = #{pwd},cardID = #{cardID},role = #{role} where adminId = #{adminId}
+    </update>
+
+    <delete id="deleteAdmin">
+        delete from admin where adminId = #{adminId}
+    </delete>
 </mapper>
