@@ -5,6 +5,7 @@ import com.qf.exam.service.FillService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -24,16 +25,20 @@ public class FillController {
     //http://localhost:8080/fillById
     //填空题按试题序号查询
     public Fill getFillByID(@PathVariable("questionId" )int questionId){
-       return fillService.getFillByID(questionId);
+        Fill fillByID = fillService.getFillByID(questionId);
+        if(fillByID !=null){
+            return  fillByID;
+        }
+        return  null;
     }
 
-    @GetMapping("saveFill")
-    public String save(@RequestBody Fill fill){
+    @PostMapping("saveFill")
+    public String save(@RequestBody Fill fill, HttpServletRequest request){
         boolean save = fillService.save(fill);
         if(save){
-            return "1";
+            return "success";
         }else{
-            return "0";
+            return "fail";
         }
     }
 
@@ -41,9 +46,9 @@ public class FillController {
     public String delete(@PathVariable("questionId") int questionId){
         boolean delete = fillService.delete(questionId);
         if(delete){
-            return "1";
+            return "success";
         }else {
-            return "0";
+            return "fail";
         }
     }
 
@@ -52,9 +57,9 @@ public class FillController {
         //Fill fill = new Fill(1,"民族风情","当今坐观日本，称霸“演艺圈”的女演员是？","深田咏美","2018最佳女演员",10,"5","第一章");
         boolean update = fillService.update(fill);
         if(update){
-            return "1";
+            return "success";
         }else{
-            return "0";
+            return "fail";
         }
     }
 }

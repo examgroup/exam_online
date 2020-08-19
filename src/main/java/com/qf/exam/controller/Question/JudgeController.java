@@ -30,9 +30,9 @@ public class JudgeController {
 //        Judge judge = new Judge(0,"历史","苍井空是宅男女神","正确","童颜巨乳",10,"5","第一章");
         boolean save = judgeService.save(judge);
         if(save){
-            return "1";
+            return "success";
         }else{
-            return "0";
+            return "fail";
         }
     }
 
@@ -40,9 +40,9 @@ public class JudgeController {
     public String delete(@PathVariable("questionId") int questionId){
         boolean delete = judgeService.delete(questionId);
         if(delete){
-            return "1";
+            return "success";
         }else {
-            return "0";
+            return "fail";
         }
     }
 
@@ -50,9 +50,9 @@ public class JudgeController {
     public String update(@RequestBody Judge judge){
         boolean update = judgeService.update(judge);
         if(update){
-            return "1";
+            return "success";
         }else{
-            return "0";
+            return "fail";
         }
     }
 

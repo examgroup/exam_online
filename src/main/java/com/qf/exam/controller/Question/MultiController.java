@@ -26,18 +26,18 @@ public class MultiController {
     String save(@RequestBody Multi multi){
         boolean save = multiService.save(multi);
         if(save){
-            return "1";
+            return "success";
         }else {
-            return "0";
+            return "fail";
         }
     }
     @GetMapping("/deleteMulti/{questionId}")
     String delete(@PathVariable("questionId") int questionId){
         boolean delete = multiService.delete(questionId);
         if(delete){
-            return "1";
+            return "success";
         }else {
-            return "0";
+            return "fail";
         }
     }
 
@@ -45,9 +45,9 @@ public class MultiController {
     String update(@RequestBody  Multi multi){
         boolean update = multiService.update(multi);
         if(update){
-            return "1";
+            return "success";
         }else {
-            return "0";
+            return "fail";
         }
     }
 }
