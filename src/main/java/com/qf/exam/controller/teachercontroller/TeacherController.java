@@ -4,10 +4,7 @@ import com.qf.exam.pojo.Admin;
 import com.qf.exam.pojo.Teacher;
 import com.qf.exam.service.IAdminService;
 import com.qf.exam.service.ITeacherService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -27,18 +24,18 @@ public class TeacherController {
     }
 
     @GetMapping("/TeacherUpdate")
-    public String updateTeacher(Teacher teacher){
+    public String updateTeacher(@RequestBody Teacher teacher){
        String a = teacherService.updateTeacher(teacher);
         return a;
     }
     @GetMapping("/TeacherSave")
-    public String saveTeacher(Teacher teacher){
+    public String saveTeacher(@RequestBody Teacher teacher){
         String a = teacherService.saveTeacher(teacher);
         return a;
 
     }
     @GetMapping("/TeacherDelete/{id}")
-    public String deleteTeacher(@PathVariable int id){
+    public String deleteTeacher(@PathVariable("id") int id){
         String a = teacherService.deleteTeacher(id);
         return a;
 
