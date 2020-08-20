@@ -46,4 +46,9 @@ public class TeacherServiceImpl implements ITeacherService {
             return "0";
         }
     }
+
+    @Override
+    public Teacher teacherById(int id) {
+        return td.teacherById(id);
+    }
 }

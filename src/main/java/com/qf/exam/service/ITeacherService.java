@@ -13,4 +13,6 @@ public interface ITeacherService {
     String saveTeacher(Teacher teacher);//添加老师信息
 
     String deleteTeacher(int id);//删除老师信息
+
+    Teacher teacherById(int id);
 }

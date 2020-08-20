@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Teacher {
     private int teacherId;// id
-    private String teacherName;//
-    private String institute;//姓名
+    private String teacherName;//老师姓名
+    private String institute;//学院
     private String sex;//性别
     private String tel;//电话号码
     private String email;//邮箱

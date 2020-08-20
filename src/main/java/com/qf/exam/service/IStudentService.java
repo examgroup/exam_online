@@ -12,4 +12,6 @@ public interface IStudentService {
     String saveStudent(Student student);//添加老师信息
 
     String deleteStudent(int id);//删除老师信息
+
+    Student studentById(int id);//根据id查询相对信息
 }

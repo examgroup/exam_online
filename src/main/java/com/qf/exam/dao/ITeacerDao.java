@@ -15,4 +15,6 @@ public interface ITeacerDao {
     int saveTeacher(Teacher teacher);//添加老师信息
 
     int deleteTeacher(int id);//删除老师信息
+
+    Teacher teacherById(int id);//根据id查询相对的老师信息
 }

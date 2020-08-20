@@ -16,12 +16,14 @@
         email = #{email},
         pwd = #{pwd},
         cardId = #{cardId},
-        TYPE = #{TYPE},
+        TYPE = #{type},
         role = #{role}
          where teacherId = #{teacherId}
     </update>
     <insert id="saveTeacher">
-        insert into teacher (teacherId, teacherName,
+        insert into teacher (
+                    teacherId,
+                    teacherName,
                     institute,
                     sex,
                     tel,
@@ -38,11 +40,14 @@
                      #{email},
                      #{pwd},
                      #{cardId},
-                     #{TYPE},
+                     #{type},
                      #{role}     )
     </insert>
 
     <delete id="deleteTeacher">
         delete from teacher where teacherId = #{teacherId}
     </delete>
+    <select id="teacherById" resultType="teacher">
+        select * from teacher where teacherId = #{teacherId}
+    </select>
 </mapper>

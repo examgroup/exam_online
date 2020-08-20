@@ -54,4 +54,7 @@
     <delete id="deleteStudent">
         delete from student where studentId = #{studentId}
     </delete>
+    <select id="studentById" resultType="student">
+        select * from student where studentId = #{studentId}
+    </select>
 </mapper>

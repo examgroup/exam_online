@@ -2,10 +2,7 @@ package com.qf.exam.controller.studentcontroller;
 
 import com.qf.exam.pojo.Student;
 import com.qf.exam.service.IStudentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -24,12 +21,12 @@ public class StudentController {
         return teacherAll;
     }
 
-    @GetMapping("/StudentUpdate")
+    @PostMapping("/StudentUpdate")
     public String updateStudent(@RequestBody Student student){
         String a = ss.updateStudent(student);
         return a;
     }
-    @GetMapping("/StudentSave")
+    @PostMapping("/StudentSave")
     public String saveStudent(@RequestBody Student student){
         String a = ss.saveStudent(student);
         return a;
@@ -40,5 +37,10 @@ public class StudentController {
         String a = ss.deleteStudent(id);
         return a;
 
+    }
+    @GetMapping("/StudentById/{id}")
+    public Student studentById(@PathVariable("id") int id){
+        Student student = ss.studentById(id);
+        return student;
     }
 }

@@ -23,12 +23,12 @@ public class TeacherController {
         return teacherAll;
     }
 
-    @GetMapping("/TeacherUpdate")
+    @PostMapping("/TeacherUpdate")
     public String updateTeacher(@RequestBody Teacher teacher){
        String a = teacherService.updateTeacher(teacher);
         return a;
     }
-    @GetMapping("/TeacherSave")
+    @PostMapping("/TeacherSave")
     public String saveTeacher(@RequestBody Teacher teacher){
         String a = teacherService.saveTeacher(teacher);
         return a;
@@ -39,5 +39,10 @@ public class TeacherController {
         String a = teacherService.deleteTeacher(id);
         return a;
 
+    }
+    @GetMapping("/TeacherById/{id}")
+    public Teacher teacherById(@PathVariable("id") int id){
+        Teacher teacher = teacherService.teacherById(id);
+        return teacher;
     }
 }

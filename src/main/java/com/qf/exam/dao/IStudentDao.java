@@ -16,5 +16,7 @@ public interface IStudentDao {
 
     int deleteStudent(int id);//删除老师信息
 
+    Student studentById(int id);//根据id查询相对信息
+
 
 }

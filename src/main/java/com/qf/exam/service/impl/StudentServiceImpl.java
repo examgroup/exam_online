@@ -45,4 +45,9 @@ public class StudentServiceImpl implements IStudentService {
             return "0";
         }
     }
+
+    @Override
+    public Student studentById(int id) {
+        return sd.studentById(id);
+    }
 }
