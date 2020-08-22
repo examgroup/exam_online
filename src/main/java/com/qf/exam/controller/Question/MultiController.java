@@ -22,7 +22,7 @@ public class MultiController {
       return   multiService.getMultiByID(questionId);
     }
 
-    @GetMapping("saveMulti")
+    @PostMapping("saveMulti")
     String save(@RequestBody Multi multi){
         boolean save = multiService.save(multi);
         if(save){
@@ -31,6 +31,7 @@ public class MultiController {
             return "fail";
         }
     }
+
     @GetMapping("/deleteMulti/{questionId}")
     String delete(@PathVariable("questionId") int questionId){
         boolean delete = multiService.delete(questionId);

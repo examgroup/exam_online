@@ -14,7 +14,7 @@
 
 
     <insert id="save">
-        insert into Multi_question value(null,#{subject},#{question},#{answerA},#{analysis},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{analysis},#{score},#{section},#{level},null,null,null)
+        insert into Multi_question value(null,#{subject},#{question},#{answerA},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{analysis},#{score},#{section},#{level},null,null,null)
     </insert>
 
     <delete id="delete">

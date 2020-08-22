@@ -25,7 +25,7 @@ public class JudgeController {
         return judgeService.getJudgeByID(questionId);
     }
 
-    @GetMapping("saveJudge")
+    @PostMapping("saveJudge")
     public String save(@RequestBody Judge judge){
 //        Judge judge = new Judge(0,"历史","苍井空是宅男女神","正确","童颜巨乳",10,"5","第一章");
         boolean save = judgeService.save(judge);
@@ -46,7 +46,7 @@ public class JudgeController {
         }
     }
 
-    @GetMapping ("updateJudge")
+    @PostMapping ("updateJudge")
     public String update(@RequestBody Judge judge){
         boolean update = judgeService.update(judge);
         if(update){

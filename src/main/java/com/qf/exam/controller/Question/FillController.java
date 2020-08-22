@@ -33,7 +33,7 @@ public class FillController {
     }
 
     @PostMapping("saveFill")
-    public String save(@RequestBody Fill fill, HttpServletRequest request){
+    public String save(@RequestBody Fill fill){
         boolean save = fillService.save(fill);
         if(save){
             return "success";
