@@ -13,6 +13,16 @@
     </select>
 
 
+    <select id="getFill" resultType="fill">
+        select * from fill_question where questionId= #{questionId}
+    </select>
+
+    <select id="getAllFill" resultType="fill">
+        select * from fill_question where SUBJECT= #{subject}
+    </select>
+
+
+
     <insert id="save">
         insert into fill_question value(null,#{subject},#{question},#{answer},#{analysis},#{score},#{level},#{section},null,null,null)
     </insert>

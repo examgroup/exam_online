@@ -1,5 +1,6 @@
 package com.qf.exam.service;
 
+import com.qf.exam.pojo.Judge;
 import com.qf.exam.pojo.Multi;
 
 import java.util.List;
@@ -10,4 +11,6 @@ public interface MultiService {
     boolean save(Multi multi);
     boolean delete(int questionId);
     boolean update(Multi multi);
+    Multi getMulti(int questionId);
+    List<Multi> getAllMulti(String subject);
 }

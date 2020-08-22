@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.exam.dao.IAdminDao">
+
+    <select id="getRoles" resultType="RPermission">
+        select * from admin a
+                inner join  admin_role au on a.admiId=au.adminId
+                inner join role r on r.rid=au.rid
+                where adminName = #{adminName}
+    </select>
+
+    <select id="getPermission" resultType="RPermission">
+       select * from admin a
+                inner join admin_role au on a.admiId=au.adminId
+                inner join role r on r.rid=au.rid
+                inner join role_perm rp on rp.rid=r.rid
+                inner join permission p on rp.pid=p.pid
+                where a.adminName = #{adminName}
+
+    </select>
+    <select id="getAllRP" resultType="RPermission">
+       select * from admin a
+                inner join admin_role ar on a.adminId=ar.adminId
+                inner join role r on r.rid=ar.rid
+                inner join role_perm rp on rp.rid=r.rid
+                inner join permission p on rp.pid=p.pid
+
+
+    </select>
+
+</mapper>

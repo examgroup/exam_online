@@ -11,6 +11,7 @@ import java.util.List;
 public class JudgeServiceImple implements JudgeService {
     @Resource
     private JudgeDao judgeDao;
+
     @Override
     public List<Judge> getAll() {
         return judgeDao.getAll();
@@ -23,16 +24,27 @@ public class JudgeServiceImple implements JudgeService {
 
     @Override
     public boolean save(Judge judge) {
-        return judgeDao.save(judge)>0;
+        return judgeDao.save(judge) > 0;
     }
 
     @Override
     public boolean delete(int questionId) {
-        return judgeDao.delete(questionId)>0;
+        return judgeDao.delete(questionId) > 0;
     }
 
     @Override
     public boolean update(Judge judge) {
-        return judgeDao.update(judge)>0;
+        return judgeDao.update(judge) > 0;
     }
+
+    @Override
+    public Judge getJudge(int questionId) {
+        return judgeDao.getJudge(questionId);
+    }
+
+    @Override
+    public List<Judge> getAllJudge(String subject) {
+        return judgeDao.getAllJudge(subject);
+    }
+
 }

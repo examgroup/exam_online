@@ -1,6 +1,7 @@
 package com.qf.exam.service.impl;
 
 import com.qf.exam.dao.MultiDao;
+import com.qf.exam.pojo.Judge;
 import com.qf.exam.pojo.Multi;
 import com.qf.exam.service.MultiService;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,21 @@ public class MultiServiceImple implements MultiService {
     public boolean update(Multi multi) {
         return multiDao.update(multi)>0;
     }
+
+    @Override
+    public Multi getMulti(int questionId) {
+        return multiDao.getMulti(questionId);
+    }
+
+//    @Override
+//    public Multi getMulti(int questionId) {
+//        return multiDao.getMulti(questionId);
+//    }
+
+    @Override
+    public List<Multi> getAllMulti(String subject) {
+        return multiDao.getAllMulti(subject);
+    }
+
+
 }

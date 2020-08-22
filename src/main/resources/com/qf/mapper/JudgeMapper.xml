@@ -12,6 +12,13 @@
         select * from judge_question where questionId= #{questionId}
     </select>
 
+    <select id="getJudge" resultType="judge">
+        select * from judge_question where questionId= #{questionId}
+    </select>
+
+    <select id="getAllJudge" resultType="judge">
+        select * from judge_question where SUBJECT= #{subject}
+    </select>
 
     <insert id="save">
         insert into judge_question value(null,#{subject},#{question},#{answer},#{analysis},#{score},#{level},#{section},null,null,null)

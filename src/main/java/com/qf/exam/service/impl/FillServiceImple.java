@@ -2,6 +2,7 @@ package com.qf.exam.service.impl;
 
 import com.qf.exam.dao.FillDao;
 import com.qf.exam.pojo.Fill;
+import com.qf.exam.pojo.Judge;
 import com.qf.exam.service.FillService;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,16 @@ public class FillServiceImple implements FillService {
     public boolean update(Fill fill) {
         return fillDao.update(fill)>0;
     }
+
+    @Override
+    public Fill getFill(int questionId) {
+        return fillDao.getFill(questionId);
+    }
+
+    @Override
+    public List<Fill> getAllFill(String subject) {
+        return fillDao.getAllFill(subject);
+    }
+
+
 }

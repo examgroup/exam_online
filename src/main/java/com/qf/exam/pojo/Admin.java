@@ -11,6 +11,8 @@ public class Admin {
     private String tel;//电话
     private String email;//邮箱
     private String pwd;//密码
+    private String code;
     private String cardID;//身份证
     private String role;//角色
+    private String imgurl;
 }

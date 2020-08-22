@@ -2,14 +2,36 @@ server:
   port: 8083
 mybatis:
   mapper-locations: classpath:com/qf/mapper/*.xml
-  type-aliases-package: com.qf.exam.pojo
+  type-aliases-package: com.qf.exam
 #  configuration: map-underscore-to-camel-case:true
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://rm-bp1qqfg22ytzyvwdzjo.mysql.rds.aliyuncs.com:3306/exam?useSSL=true&serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://rm-bp1qqfg22ytzyvwdzjo.mysql.rds.aliyuncs.com/exam?useSSL=true&serverTimezone=UTC&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: Llp19950705
   thymeleaf:
     cache: false
+  #邮箱配置
+  mail:
+    host: smtp.qq.com
+    username: 1051152590@qq.com
+    password: txusatskxdwlbcff
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  redis:
+    database: 0
+    host: 127.0.0.1
+upload:
+  qiniu:
+    ak: kO5hh9u_boy3FGw_X2rfPcnSQQCvM8cYmQj624my
+    sk: SF8x-JWZIIvM6ZLPQ3cMJ_aXhyWRgoFwxXEQ5jAT
+    bucketname: yzx-project
+    url: http://qfcuavro3.hb-bkt.clouddn.com/

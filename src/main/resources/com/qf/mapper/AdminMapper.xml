@@ -16,12 +16,13 @@
         select * from admin where adminName = #{adminName} and pwd = #{pwd}
     </select>
 
+
     <insert id="saveAdmin">
         insert into admin values (null,#{adminName},#{sex},#{tel},#{email},#{pwd},#{cardID},#{role},null,null,null )
     </insert>
 
     <update id="updateAdminById">
-        update admin set adminName = #{adminName},sex = #{sex},tel = #{tel},email = #{email},pwd = #{pwd},cardID = #{cardID},role = #{role} where adminId = #{adminId}
+        update admin set adminName = #{adminName},sex = #{sex},tel = #{tel},email = #{email},pwd = #{pwd},cardID = #{cardID},role = #{role},imgurl=#{imgurl} where adminId = #{adminId}
     </update>
 
     <delete id="deleteAdmin">

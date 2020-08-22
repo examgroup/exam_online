@@ -1,7 +1,10 @@
 package com.qf.exam.service.impl;
 
 import com.qf.exam.dao.IAdminDao;
+import com.qf.exam.dto.RPermission;
 import com.qf.exam.pojo.Admin;
+import com.qf.exam.pojo.Permission;
+import com.qf.exam.pojo.Role;
 import com.qf.exam.service.IAdminService;
 import org.springframework.stereotype.Service;
 
@@ -42,4 +45,21 @@ public class AdminServiceImpl implements IAdminService {
     public Admin login(String adminName, String pwd) {
         return ad.login(adminName, pwd);
     }
+
+    @Override
+    public List<RPermission> getRoles(String adminName) {
+        return ad.getRoles(adminName);
+    }
+
+    @Override
+    public List<RPermission> getPermission(String adminName) {
+        return ad.getPermission(adminName);
+    }
+
+    @Override
+    public List<RPermission> getAllRP() {
+        return ad.getAllRP();
+    }
+
+
 }

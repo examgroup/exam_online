@@ -10,4 +10,6 @@ public interface JudgeService {
     boolean save(Judge judge);
     boolean delete(int questionId);
     boolean update(Judge judge);
+    Judge getJudge(int questionId);
+    List<Judge> getAllJudge(String subject);
 }

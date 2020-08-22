@@ -12,4 +12,6 @@ public interface JudgeDao {
     int save(Judge judge);
     int delete(int questionId);
     int update(Judge judge);
+    Judge getJudge(int questionId);
+    List<Judge> getAllJudge(String subject);
 }
