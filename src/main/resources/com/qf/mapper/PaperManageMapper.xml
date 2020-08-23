@@ -2,10 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.exam.dao.PaperManageDao">
+<mapper namespace="com.qf.exam.dao.IPaperManageDao">
 
-
-    <select id="getQuestionId" resultType="PaperManage">
-    select * from paper_manage where paperId = #{paperId}
+    <select id="getAllPaperManage" resultType="paper_manage">
+        select * from paper_manage
     </select>
+
+    <insert id="save">
+        insert into paper_manage(paperId,questionType,questionId,yuliu,yuliu2,yuliu3) value(#{paperId},#{questionType},#{questionId},null,null,null)
+    </insert>
+
+    <delete id="delete">
+        delete from paper_manage where paperId = #{paperId}
+    </delete>
+
+    <update id="update">
+        update paper_manage set questionType=#{questionType},questionId=#{questionId} where paperCode=#{paperCode}
+    </update>
 </mapper>

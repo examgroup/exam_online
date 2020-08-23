@@ -2,12 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.exam.dao.ExamManageDao">
+<mapper namespace="com.qf.exam.dao.IExamManageDao">
 
-    <select id="getAllExamManage" resultType="ExamManage">
-    select * from exam_manage
+    <select id="getAllExamManage" resultType="exam_manage">
+        select * from exam_manage
     </select>
-    <select id="getExamManage" resultType="ExamManage">
-    select * from exam_manage where examCode = #{examCode}
-    </select>
+
+    <insert id="save">
+        insert into exam_manage value(null,#{description},#{source},#{paperId},#{examDate},#{totalTime},#{grade},#{term},#{major},#{institute},#{totalScore},#{type},#{tips},null,null,null)
+    </insert>
+
+    <delete id="delete">
+        delete from exam_manage where examCode = #{examCode}
+    </delete>
+
+    <update id="update">
+        update exam_manage set description=#{description},source=#{source},paperId=#{paperId},examDate=#{examDate},totalTime=#{totalTime},grade=#{grade},term=#{term},major=#{major},institute=#{institute},totalScore=#{totalScore},type=#{type},tips=#{tips} where examCode=#{examCode}
+    </update>
 </mapper>

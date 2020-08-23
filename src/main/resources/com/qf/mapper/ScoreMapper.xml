@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.exam.dao.IScoreDao">
+
+    <select id="getAllScore" resultType="score">
+        select * from score
+    </select>
+
+    <insert id="save">
+        insert into score value(null,#{examCode},#{studentId},#{subject},#{ptScore},#{etScore},#{score},#{answerDate},null,null,null)
+    </insert>
+
+    <delete id="delete">
+        delete from score where scoreId = #{scoreId}
+    </delete>
+
+    <update id="update">
+        update score set examCode=#{examCode},studentId=#{studentId},subject=#{subject},ptScore=#{ptScore},etScore=#{etScore},score=#{score},answerDate=#{answerDate} where scoreId=#{scoreId}
+    </update>
+</mapper>
